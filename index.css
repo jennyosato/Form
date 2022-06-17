@@ -73,7 +73,7 @@ input:focus {
 }
 input:focus:invalid {
   border: 2px solid hsl(0, 100%, 74%);
-  background-image: url("/icons/icon-error.svg");
+  background-image: url("icons/icon-error.svg");
   background-position: right;
   background-repeat: no-repeat;
   background-origin: content-box;
@@ -117,7 +117,7 @@ button:focus {
     min-height: 592px;
     padding: 0;
     display: block;
-    background-image: url("/icons/bg-intro-mobile.png");
+    background-image: url("icons/bg-intro-mobile.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
