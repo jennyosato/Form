@@ -17,8 +17,8 @@ main {
   margin: 20px auto;
   padding-top: 50px;
   padding-bottom: 50px;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 80px;
+  padding-right: 80px;
   background-image: url("icons/img1.png");
   background-color: hsl(0, 100%, 74%);
   display: flex;
@@ -27,21 +27,24 @@ main {
 }
 #intro {
   color: white;
-  width: 50%;
+  width: 40%;
+  
 }
 #form-el {
-  width: 50%;
+  width: 60%;
+  margin-left: 20px;
+  
 }
 #intro h1 {
-  padding-right: 50px;
+  line-height: 40px;
   font-weight: bolder;
 }
 #intro p {
-  font-size: 15px;
-  margin-top: 20px;
+  font-size: 11px;
+  margin-top: 15px;
 }
 form {
-  padding: 20px;
+  padding: 30px 20px;
   border-radius: 5px;
   background-color: white;
   box-shadow: 1px 5px rgba(59, 55, 55, 0.3);
@@ -55,15 +58,14 @@ form p {
 span {
   color: hsl(0, 100%, 74%);
   font-size: 10px;
-  font-weight: bold;
   font-style: italic;
-  padding-top: 5px;
+  padding-top: 3px;
   text-align: right;
   display: none;
 }
 input {
   width: 100%;
-  padding: 15px 20px;
+  padding: 13px 20px;
   margin-top: 10px;
   border-radius: 3px;
   color: rgb(54, 53, 53);
@@ -74,6 +76,10 @@ input {
 input:focus {
   background-color: white;
   border: 1px solid rgb(211, 209, 209);
+  
+}
+.inputs:focus::placeholder{
+  color: transparent;
 }
 input:focus:invalid {
   border: 2px solid hsl(0, 100%, 74%);
@@ -96,6 +102,7 @@ button {
   color: white;
   font-weight: bold;
   border-bottom: 2px solid hsla(116, 35%, 33%, 0.7);
+  
 }
 button:focus {
   opacity: 0.7;
@@ -111,8 +118,17 @@ button:focus {
   text-align: center;
   color: white;
   font-size: 15px;
-  border-bottom: 5px solid rgba(22, 22, 22, 0.4);
+  box-shadow: -1px 6px rgba(59, 55, 55, 0.3);
 }
+.red:focus::placeholder{
+  color:hsl(0, 100%, 74%);
+  font-weight: bold;
+}
+
+b{
+  color: hsl(0, 100%, 74%);
+}
+
 @media screen and (max-width: 1100px){
   main{
     width: 100%;
@@ -134,30 +150,40 @@ button:focus {
   main{
     width: 100%;
     height: 100vh;
-    padding: 0 15px;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+  #intro,#form-el{
+    width: 95%;
     margin: 0;
   }
   #intro p{
-    font-size: 1em;
+    font-size: 0.8em;
     text-align: center;
-    line-height: 20px;
-    padding: 0;
     margin-top: 0;
+
   }
   #intro h1{
-    padding: 0 10px;
     text-align: center;
-    font-size:1.5em;
-    margin-bottom: 10px;
+    font-size: 1.5em;
+    padding: 10px 20px;
+    margin-bottom: 0;
+    line-height: 25px;
+  }
+  form{
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 421px) {
   main {
     position: relative;
     margin-top: 0;
     width: 100%;
     height: 100vh;
-    padding: 20px 30px;
+    padding: 15px 20px;
     display: block;
     background-image: url("icons/bg-intro-mobile.png");
     background-position: center;
@@ -172,28 +198,38 @@ button:focus {
   }
   #intro h1 {
     margin-top: 15px;
+    line-height: 25px;
     font-size: 20px;
-    padding: 2px 32px;
+    text-align: center;
+    padding: 1px 32px;
   }
+  
   #intro p {
-    font-size: 12px;
-    padding: 5px 30px;
+    font-size: 13px;
+    text-align: center;
+    padding-top: 0;
+    padding-left: 5px;
+    padding-right: 2px;
+    padding-bottom: 20px;
     color: rgb(240, 234, 234);
   }
   #info {
     padding: 12px 50px;
   }
   input {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     margin-top: 0;
     font-weight: bold;
     font-size: 10px;
+    padding: 8px;
   }
   input:focus:invalid {
     margin-bottom: 1px;
+    background-size: 15px;
   }
   form {
-    padding: 5px 15px;
+    padding: 10px 15px;
+    margin-top: 5px;
   }
   form p {
     padding: 5px 35px;
@@ -202,6 +238,8 @@ button:focus {
     padding-top: 1px;
   }
   button {
-    margin-top: 5px;
+    margin-top: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }

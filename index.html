@@ -23,15 +23,15 @@
         </p>
       </div>
       <div id="form-el">
-        <p id="info"><b>Try it for free 7 days</b> then $20/mo. thereafter</p>
+        <p id="info"><strong>Try it for free 7 days</strong> then $20/mo. thereafter</p>
         <form action="">
           <div>
-            <input type="name" placeholder="First Name" required />
+            <input class="inputs" type="name"  placeholder="First Name" required />
             <span>First Name cannot be empty</span>
           </div>
 
           <div>
-            <input type="name" placeholder="Last Name" required />
+            <input class="inputs" type="name" placeholder="Last Name" required />
             <span>Last Name cannot be empty</span>
           </div>
 
@@ -40,29 +40,32 @@
               type="email"
               placeholder="Email Address"
               id="email-el"
-              oninvalid="pholder()"
+              onfocus="changePlaceholder()"
+              onblur="this.placeholder = 'Email Address'"
               required
             />
             <span>Looks like this is not an email</span>
           </div>
           <div>
-            <input type="password" placeholder="Password" required />
+            <input class="inputs" type="password" placeholder="Password" required />
             <span>Password cannot be empty</span>
           </div>
-          <button type="submit">CLAIM YOUR FREE TRIAL</button>
+          <button  type="submit">CLAIM YOUR FREE TRIAL</button>
           <p>
             By clicking the button you are agreeing to our
-            <b style="color: hsl(0, 100%, 74%)">Terms and Services</b>
+            <b>Terms and Services</b>
           </p>
         </form>
       </div>
     </main>
-   
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script type="text/javascript">
-      $(document).ready();
-      function pholder() {
-        $("input:email").attr(placeholder, "email@example/com");
+      function changePlaceholder() {
+        $("#email-el").attr("placeholder", "email@example/com");
+        $("#email-el").addClass("red")
+        
       }
+      
     </script>
   </body>
 </html>
